@@ -13,10 +13,10 @@ def login_func(request):
 
 
 def logout_func(request):
-    return render(request, "logout/index.html")
+    return render(request, "logout/logout.html")
 
-def index_func(request):
-    return render(request, "contents/index.html")
+# def index_func(request):
+#     return render(request, "contents/top.html")
 
 
 @login_required
@@ -26,4 +26,4 @@ def top_page(request):
         'hoge': 'fuga',
         'user': user
     }
-    return render(request, 'top/index.html', pageDic)
+    return render(request, 'top/top.html', pageDic)
