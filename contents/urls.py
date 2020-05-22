@@ -9,23 +9,10 @@ from . import views
 urlpatterns = [
     # path('', include('social_django.urls', namespace = 'social')),
     path('', include('social_django.urls')),
-    path('', views.index_func, name="index"),
-    # path('oauth/', include('social_django.urls', namespace='social')),
-    # path('login/',
-    #         django.contrib.auth.views.login,
-    #         {
-    #             'template_name': 'login/index.html',
-    #         },
-    #         name='login'),
-    # path('login/', login_func, name="login"),
+    # path('', views.index_func, name="index"),
+    path('', views.login_func, name="login"),
     path('logout/', views.logout_func, name="logout"),
-    path('login/', views.login_func, name="login"),
-    # path('logout/',
-    #     django.contrib.auth.views.logout,
-    #     {
-    #         'template_name': 'logout/index.html',
-    #     },
-    #     name='logout'),
+    # path('login/', views.login_func, name="login"),
     path('top/', views.top_page, name="top_page"),
 
 ]

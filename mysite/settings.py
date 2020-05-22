@@ -136,8 +136,8 @@ SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
 
 # SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/contents/top'
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/top/'
+LOGIN_URL = ''
+LOGIN_REDIRECT_URL = '/contents/top'
 
 AUTHENTICATION_BACKENDS = [
        'social_core.backends.twitter.TwitterOAuth',
