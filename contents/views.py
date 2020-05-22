@@ -15,6 +15,9 @@ def login_func(request):
 def logout_func(request):
     return render(request, "logout/index.html")
 
+def index_func(request):
+    return render(request, "contents/index.html")
+
 
 @login_required
 def top_page(request):

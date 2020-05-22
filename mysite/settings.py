@@ -130,16 +130,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-AUTHENTICATION_BACKENDS = [
-       'social_core.backends.twitter.TwitterOAuth',
-       'django.contrib.auth.backends.ModelBackend',
-   ]
-
+LOGIN_REDIRECT_URL = '/contents/top'
 SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
 SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/contents/top'
-# LOGIN_URL = '/login/'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/top/'
+
+AUTHENTICATION_BACKENDS = [
+       'social_core.backends.twitter.TwitterOAuth',
+       'django.contrib.auth.backends.ModelBackend',
+   ]
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)

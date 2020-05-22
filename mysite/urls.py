@@ -24,7 +24,8 @@ urlpatterns = [
     # path('', include('contents.urls')),
     # path('admin/', admin.site.urls),
     path('admin/', admin.site.urls),
-    # path('contents/', include('contents.urls')),
-    path('', include('contents.urls')),
+    path('', include('social_django.urls')),
+    path('contents/', include('contents.urls')),
+    # path('', include('contents.urls')),
     # path('contents/', include('django.contrib.auth.urls')),
 ]
