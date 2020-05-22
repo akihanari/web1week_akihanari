@@ -19,6 +19,7 @@ urlpatterns = [
     #         name='login'),
     # path('login/', login_func, name="login"),
     path('logout/', views.logout_func, name="logout"),
+    path('login/', views.login_func, name="login"),
     # path('logout/',
     #     django.contrib.auth.views.logout,
     #     {
