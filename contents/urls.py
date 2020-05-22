@@ -23,8 +23,5 @@ urlpatterns = [
     #     },
     #     name='logout'),
     path('top/', views.top_page, name="top_page"),
-    # path('', include('contents.urls')),
-    # path('login/', views.login, name='login/index.html'),
-    # path('logout/', views.logout, name='logout/index.html'),
 
 ]
