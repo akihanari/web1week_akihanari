@@ -8,7 +8,8 @@ from . import views
 
 urlpatterns = [
     # path('', include('social_django.urls', namespace = 'social')),
-    path('', index_func, name='index'),
+    path('', include('social_django.urls')),
+
     # path('oauth/', include('social_django.urls', namespace='social')),
     # path('login/',
     #         django.contrib.auth.views.login,
