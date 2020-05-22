@@ -9,11 +9,11 @@ from social_django.models import UserSocialAuth
 
 
 def login_func(request):
-    return render(request, "registration/index.html")
+    return render(request, "index.html")
 
 
 def logout_func(request):
-    return render(request, "logout/logout.html")
+    return render(request, "logout.html")
 
 # def index_func(request):
 #     return render(request, "contents/top.html")
@@ -26,4 +26,4 @@ def top_page(request):
         'hoge': 'fuga',
         'user': user
     }
-    return render(request, 'top/top.html', pageDic)
+    return render(request, 'top.html', pageDic)
