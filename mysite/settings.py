@@ -134,7 +134,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
 SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
 
-# SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/contents/top'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/contents/top'
 
 # LOGIN_URL = '/contents/contents'
 # LOGIN_REDIRECT_URL = '/contents/top'
