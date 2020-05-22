@@ -9,7 +9,7 @@ from . import views
 urlpatterns = [
     # path('', include('social_django.urls', namespace = 'social')),
     path('', include('social_django.urls')),
-    path('', index_func, name="index"),
+    path('', views.index_func, name="index"),
     # path('oauth/', include('social_django.urls', namespace='social')),
     # path('login/',
     #         django.contrib.auth.views.login,
@@ -18,7 +18,7 @@ urlpatterns = [
     #         },
     #         name='login'),
     # path('login/', login_func, name="login"),
-    path('logout/', logout_func, name="logout"),
+    path('logout/', views.logout_func, name="logout"),
     # path('logout/',
     #     django.contrib.auth.views.logout,
     #     {
