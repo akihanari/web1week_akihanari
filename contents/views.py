@@ -9,7 +9,7 @@ from social_django.models import UserSocialAuth
 
 
 def login_func(request):
-    return render(request, "registration/login.html")
+    return render(request, "registration/index.html")
 
 
 def logout_func(request):
