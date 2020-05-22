@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-
+<!-- {% load static %} -->
 {% block content %}
 <div align="center">
         <button type="button" class="button"
         onclick="location.href='{% url 'social:begin' 'twitter' %}?next={{ next }}'">
         Twitter でログイン🐣</button>
 </div>
-{% endblock %}
+{% endblock content%}
