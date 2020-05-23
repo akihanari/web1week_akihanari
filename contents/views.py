@@ -15,15 +15,12 @@ def login_func(request):
 def logout_func(request):
     return render(request, "logout.html")
 
-# def index_func(request):
-#     return render(request, "contents/top.html")
-
 
 @login_required
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
-    user_oauth_token = social_account.extra_data['access_token']['oauth_token']
-    user_oauth_token_sercret = social_account.extra_data['access_token']['oauth_token_secret']
+    user_oauth_token = user.access_token.oauth_token
+    user_oauth_token_sercret = user.access_token.oauth_token_secret
     return render(request,'top.html',{'user': user, 'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret})
 
     # form = TweetForm
