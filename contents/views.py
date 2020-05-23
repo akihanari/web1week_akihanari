@@ -33,7 +33,7 @@ def top_page(request):
         "consumer_key": SOCIAL_AUTH_TWITTER_KEY,
         "consumer_secret": SOCIAL_AUTH_TWITTER_SECRET,
         "access_token": user_oauth_token,
-        "access_token_secret": "user_oauth_token_sercret
+        "access_token_secret": user_oauth_token_sercret
     }
 
     params = {}
