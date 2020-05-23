@@ -24,9 +24,9 @@ def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     pageDic = {
         'hoge': 'fuga',
-        'user': user,
-        # 'screen_name': user.access_token.screen_name
+        'user': user
     }
+    # 'screen_name': user.access_token.screen_name
     return render(request, 'top.html', pageDic)
 
 
