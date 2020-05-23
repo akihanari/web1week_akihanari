@@ -24,15 +24,16 @@ def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     user_oauth_token = social_account.extra_data['access_token']['oauth_token']
     user_oauth_token_sercret = social_account.extra_data['access_token']['oauth_token_secret']
-    # form = TweetForm
     pageDic = {
         'hoge': 'fuga',
         'user': user,
-        'user_oauth_token': user_oauth_token,
-        'user_oauth_token_sercret': user_oauth_token_sercret
     }
+    # 'user_oauth_token': user_oauth_token,
+    # 'user_oauth_token_sercret': user_oauth_token_sercret
     # 'screen_name': user.access_token.screen_name
-    return render(request, 'top.html', pageDic)
+    return render(request, "top.html", pageDic)
+
+    # form = TweetForm
 
 
 # UserId:{{ user.access_token.user_id }}</p>
