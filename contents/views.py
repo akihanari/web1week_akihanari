@@ -25,36 +25,31 @@ def top_page(request):
     user_oauth_token_sercret = social_account.extra_data['access_token']['oauth_token_secret']
     # screen_name = social_account['screen_name']
 
-    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret}
+
 
     # url = 'https://api.twitter.com/1.1/users/show.json' + '?user_id=' + request.user.id + '&include_entities=true'
 
-    # oath_key_dict = {
-    #     "consumer_key": SOCIAL_AUTH_TWITTER_KEY,
-    #     "consumer_secret": SOCIAL_AUTH_TWITTER_SECRET,
-    #     "access_token": user_oauth_token,
-    #     "access_token_secret": user_oauth_token_sercret
-    # }
+    params = {}
 
-    # params = {}
-    #
-    # url = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-    #
-    # # OAuth で GET
-    # twitter = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_sercret)
-    #
-    # req = twitter.get(url, params = params)
-    #
-    # if req.status_code == 200:
-    #     # レスポンスはJSON形式なので parse する
-    #     timeline = json.loads(req.text)
-    #     # 各ツイートの本文を表示
-    #     for tweet in timeline:
-    #         # print(tweet["text"])
-    #         pass
+    url = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+
+    # OAuth で GET
+    twitter = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_sercret)
+
+    req = twitter.get(url, params = params)
+
+    if req.status_code == 200:
+        # レスポンスはJSON形式なので parse する
+        timeline = json.loads(req.text)
+        # 各ツイートの本文を表示
+        # for tweet in timeline:
+        #     # print(tweet["text"])
+        #     pass
     # else:
         # エラーの場合
         # print ("Error: %d" % req.status_code)
+
+    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret, 'timeline': timeline}
 
     return render(request,'top.html', social_dic)
 
