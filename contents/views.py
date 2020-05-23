@@ -25,8 +25,6 @@ def top_page(request):
     user_oauth_token_secret = social_account.extra_data['access_token']['oauth_token_secret']
     # screen_name = social_account['screen_name']
 
-
-
     # url = 'https://api.twitter.com/1.1/users/show.json' + '?user_id=' + request.user.id + '&include_entities=true'
     #
     # params = {}
@@ -58,7 +56,7 @@ def top_page(request):
     # Timelineメソッド、stringで返却される
     timeline = api.home_timeline()
 
-    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret, 'timeline': timeline}
+    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret}
 
     return render(request,'top.html', social_dic)
 
