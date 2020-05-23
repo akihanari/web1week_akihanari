@@ -26,7 +26,7 @@ def top_page(request):
     user_oauth_token_sercret = social_account.extra_data['access_token']['oauth_token_secret']
     pageDic = {
         'hoge': 'fuga',
-        'user': user,
+        'user': user
     }
     # 'user_oauth_token': user_oauth_token,
     # 'user_oauth_token_sercret': user_oauth_token_sercret
