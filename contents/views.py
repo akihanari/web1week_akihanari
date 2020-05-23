@@ -23,7 +23,7 @@ def top_page(request):
     print(user_oauth_token)
     user_oauth_token_sercret = user.access_token.oauth_token_secret
     print(user_oauth_token_sercret)
-    return render(request,'top.html',{'user': user, 'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret})
+    return render(request,'top.html',{'user': user })
 
     # form = TweetForm
 
