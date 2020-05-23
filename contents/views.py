@@ -48,13 +48,20 @@ def top_page(request):
         # print ("Error: %d" % req.status_code)
 
 
-    # OAuth認証
-    auth = tweepy.OAuthHandler(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET)
-    auth.set_access_token(user_oauth_token, user_oauth_token_secret)
-    api = tweepy.API(auth)
+    # # OAuth認証
+    # auth = tweepy.OAuthHandler(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET)
+    # auth.set_access_token(user_oauth_token, user_oauth_token_secret)
+    # api = tweepy.API(auth)
+    #
+    # # Timelineメソッド、stringで返却される
+    # timeline = api.home_timeline
+    tw = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_secret)
+    url = 'https://api.twitter.com/1.1/statuses/home_timeline.json'
+    params = {'count': 1}
+    req = tw.get(url, params = params)
 
-    # Timelineメソッド、stringで返却される
-    timeline = api.home_timeline()
+    if req.status_code == 200:
+        timeline = json.loads(req.text)
 
     social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret}
 
