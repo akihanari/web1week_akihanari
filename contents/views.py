@@ -21,6 +21,7 @@ def logout_func(request):
 def top_page(request):
 
     social_account = UserSocialAuth.objects.get(user_id=request.user.id)
+    social_account_name = UserSocialAuth.objects.get(user_id=request.user.name)
     user_oauth_token = social_account.extra_data['access_token']['oauth_token']
     user_oauth_token_secret = social_account.extra_data['access_token']['oauth_token_secret']
     # screen_name = social_account['screen_name']
@@ -57,14 +58,14 @@ def top_page(request):
     # timeline = api.home_timeline
     # tw = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_secret)
 
-    url = 'https://api.twitter.com/1.1/statuses/home_timeline.json'
-    params = {'count': 1}
-    req = UserSocialAuth.objects.get(url, params = params)
+    # url = 'https://api.twitter.com/1.1/statuses/home_timeline.json'
+    # params = {'count': 1}
+    # req = UserSocialAuth.objects.get(url, count=request.user.id)
+    #
+    # if req.status_code == 200:
+    #     timeline = json.loads(req.text)
 
-    if req.status_code == 200:
-        timeline = json.loads(req.text)
-
-    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret}
+    social_dic = {'social_account': social_account, 'social_account_name': social_account_name ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret}
 
     return render(request,'top.html', social_dic)
 
