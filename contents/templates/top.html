@@ -1,20 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
   <div align="center">
-    <h1>会員トップ</h1>
+    <h1>あなたのベストツイート🐣</h1>
     <p>
       <a href="/logout"><button type="button" >ログアウト</button></a>
     </p>
     <div>
       <p><b>ScreenName</b>:{{ social_account.access_token.screen_name }}</p>
-      <p><b>UserId</b>:{{ social_account.access_token.user_id }}</p>
+
       <p><b>OAuthTokenSecret</b>:{{ user_oauth_token_sercret }}</p>
       <p><b>OAuthToken</b>:{{ user_oauth_token }}</p>
-      <p><b>AuthTime</b>:{{ social_account.extra_data.auth_time }}</p>
-      <p><b>created_at</b>:{{ social_account.created_at }}</p>
+
+      <p><b>created_at</b>:{{ social_account.access_token.created_at }}</p>
+      <p><b>description</b>:{{ social_account.access_token.description }}</p>
       <p><b>User</b>:{{ social_account }}</p>
     </div>
   </div>
 {% endblock content %}
+<!-- <p><b>UserId</b>:{{ social_account.access_token.user_id }}</p>
+<p><b>AuthTime</b>:{{ social_account.extra_data.auth_time }}</p> -->
 <!-- <p><b>OAuthTokenSecret</b>:{{ user.access_token.oauth_token_secret }}</p> -->
 <!-- <p><b>OAuthToken</b>:{{ user.access_token.oauth_token }}</p> -->
