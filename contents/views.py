@@ -19,7 +19,7 @@ def logout_func(request):
 
 @login_required
 def top_page(request):
-    user = UserSocialAuth.objects.get(user_id=request.user)
+    # user = UserSocialAuth.objects.get(user_id=request.user.id)
     social_account = UserSocialAuth.objects.get(user_id=request.user.id)
     # social_account_name = UserSocialAuth.objects.get(user_id=request.user.name)
     user_oauth_token = social_account.extra_data['access_token']['oauth_token']
