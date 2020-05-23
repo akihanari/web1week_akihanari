@@ -36,22 +36,22 @@ def top_page(request):
     #     "access_token_secret": user_oauth_token_sercret
     # }
 
-    params = {}
-
-    url = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-
-    # OAuth で GET
-    twitter = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_sercret)
-
-    req = twitter.get(url, params = params)
-
-    if req.status_code == 200:
-        # レスポンスはJSON形式なので parse する
-        timeline = json.loads(req.text)
-        # 各ツイートの本文を表示
-        for tweet in timeline:
-            # print(tweet["text"])
-            pass
+    # params = {}
+    #
+    # url = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+    #
+    # # OAuth で GET
+    # twitter = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_sercret)
+    #
+    # req = twitter.get(url, params = params)
+    #
+    # if req.status_code == 200:
+    #     # レスポンスはJSON形式なので parse する
+    #     timeline = json.loads(req.text)
+    #     # 各ツイートの本文を表示
+    #     for tweet in timeline:
+    #         # print(tweet["text"])
+    #         pass
     # else:
         # エラーの場合
         # print ("Error: %d" % req.status_code)
