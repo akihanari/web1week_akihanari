@@ -1,23 +1,27 @@
 {% load static %}
 <html>
 <head>
-  <title>My-Best-of-Likes👍</title>
+{% block customcss %} 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'css/contents.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Audiowide|Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+1p:400,500&display=swap" rel="stylesheet">
-
+{% endblock customcss %}
+<title>My-Best-of-Likes👍</title>
 </head>
 
 <body>
+  {% block header %}
   <div class="page-header">
     <h1><a href="/">My Best 3👍</a></h1>
   </div>
   <div class="content container">
     <div class="row">
       <div class="col-md-8">
+        {% endblock header %}
+
         {% block content %}
         {% endblock content%}
       </div>
