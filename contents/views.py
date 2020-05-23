@@ -55,10 +55,11 @@ def top_page(request):
     #
     # # Timelineメソッド、stringで返却される
     # timeline = api.home_timeline
-    tw = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_secret)
+    # tw = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_secret)
+
     url = 'https://api.twitter.com/1.1/statuses/home_timeline.json'
     params = {'count': 1}
-    req = tw.get(url, params = params)
+    req = UserSocialAuth.objects.get(url, params = params)
 
     if req.status_code == 200:
         timeline = json.loads(req.text)
