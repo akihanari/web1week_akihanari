@@ -20,7 +20,9 @@ def logout_func(request):
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     user_oauth_token = user.access_token.oauth_token
+    print(user_oauth_token)
     user_oauth_token_sercret = user.access_token.oauth_token_secret
+    print(user_oauth_token_sercret)
     return render(request,'top.html',{'user': user, 'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret})
 
     # form = TweetForm
