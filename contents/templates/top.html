@@ -9,7 +9,9 @@
     <h1>会員トップ</h1>
     <h2>{{ user }}</h2>
     <div>
-      <p>UserId:{{ user.access_token.user_id }}</p>
+      <!-- <p>UserId:{{ user.access_token.user_id }}</p> -->
+      <p>'user_oauth_token': {{user_oauth_token}}</p>
+      <p>'user_oauth_token_sercret': {{user_oauth_token_sercret}}</p>
       <!-- <p>OAuthTokenSecret:{{ user.access_token.oauth_token_secret }}</p>
       <p>OAuthToken:{{ user.access_token.oauth_token }}</p> -->
       <!-- <p>スクリーンネーム:{{ screen_name }}</p> -->
