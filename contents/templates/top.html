@@ -6,7 +6,7 @@
       <a href="/logout"><button type="button" >ログアウト</button></a>
     </p>
     <div>
-      <p><b>ScreenName</b>:{{ social_account.access_token.screen_name }}</p>
+      <p><b>ScreenName</b>:{{ screen_name }}</p>
       <p><b>Name</b>:{{ social_account.access_token.name }}</p>
 
       <p><b>OAuthTokenSecret</b>:{{ user_oauth_token_sercret }}</p>
@@ -21,6 +21,7 @@
     </div>
   </div>
 {% endblock content %}
+<!-- <p><b>ScreenName</b>:{{ social_account.access_token.screen_name }}</p> -->
 <!-- <p><b>UserId</b>:{{ social_account.access_token.user_id }}</p>
 <p><b>AuthTime</b>:{{ social_account.extra_data.auth_time }}</p> -->
 <!-- <p><b>OAuthTokenSecret</b>:{{ user.access_token.oauth_token_secret }}</p> -->
