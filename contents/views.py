@@ -25,7 +25,7 @@ def top_page(request):
     pageDic = {
         'hoge': 'fuga',
         'user': user,
-        'screen_name': user.access_token.screen_name
+        # 'screen_name': user.access_token.screen_name
     }
     return render(request, 'top.html', pageDic)
 
