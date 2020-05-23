@@ -20,8 +20,8 @@ def logout_func(request):
 @login_required
 def top_page(request):
 
-    social_account = UserSocialAuth.objects.get(user_id=request.user.id)
-    social_account_name = UserSocialAuth.objects.get(user_id=request.user.name)
+    social_account = UserSocialAuth.objects.get(user_id=request.user)
+    # social_account_name = UserSocialAuth.objects.get(user_id=request.user.name)
     user_oauth_token = social_account.extra_data['access_token']['oauth_token']
     user_oauth_token_secret = social_account.extra_data['access_token']['oauth_token_secret']
     # screen_name = social_account['screen_name']
@@ -65,7 +65,7 @@ def top_page(request):
     # if req.status_code == 200:
     #     timeline = json.loads(req.text)
 
-    social_dic = {'social_account': social_account, 'social_account_name': social_account_name ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret}
+    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret}
 
     return render(request,'top.html', social_dic)
 
