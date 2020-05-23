@@ -42,7 +42,7 @@ def top_page(request):
 
     # OAuth で GET
     twitter = OAuth1Session(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET, user_oauth_token, user_oauth_token_sercret)
-    
+
     req = twitter.get(url, params = params)
 
     if req.status_code == 200:
@@ -50,10 +50,11 @@ def top_page(request):
         timeline = json.loads(req.text)
         # 各ツイートの本文を表示
         for tweet in timeline:
-            print(tweet["text"])
-    else:
+            # print(tweet["text"])
+            pass
+    # else:
         # エラーの場合
-        print ("Error: %d" % req.status_code)
+        # print ("Error: %d" % req.status_code)
 
     return render(request,'top.html', social_dic)
 
