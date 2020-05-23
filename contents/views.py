@@ -21,9 +21,9 @@ def top_page(request):
     social_account = UserSocialAuth.objects.get(user_id=request.user.id)
     user_oauth_token = social_account.extra_data['access_token']['oauth_token']
     user_oauth_token_sercret = social_account.extra_data['access_token']['oauth_token_secret']
-    screen_name = social_account['screen_name']
+    # screen_name = social_account['screen_name']
 
-    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret, 'screen_name': screen_name}
+    social_dic = {'social_account': social_account ,'user_oauth_token': user_oauth_token, 'user_oauth_token_sercret': user_oauth_token_sercret }
     return render(request,'top.html', social_dic)
 
     # form = TweetForm
